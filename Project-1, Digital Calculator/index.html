@@ -3,9 +3,176 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Digital Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Happy+Monkey&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    html,
+    body {
+      height: 100%;
+      min-width: 100%;
+      font-family: "Bitcount Single";
+      background-color: #020202;
+      color: #e8e6e6;
+    }
+
+    .head {
+      margin: 3rem 2rem;
+    }
+    .head h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+
+    .head h3 {
+      font-size: 1.4rem;
+      padding: 0 2rem;
+      font-weight: 300;
+    }
+    .head i {
+      font-weight: 100;
+    }
+    .calculator {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.6rem;
+    }
+
+    input {
+      min-width: 517px;
+      text-align: center;
+      background-color: rgb(74, 74, 76);
+      height: 4.4rem;
+      border: 1px solid #000000;
+      transition:
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    /* Target all input elements when focused */
+    input:focus {
+      outline: none;
+      border-color: #7cff4f;
+      box-shadow:
+        0 0 0 3px rgba(124, 255, 79, 0.25),
+        0 0 18px rgba(124, 255, 79, 0.55);
+    }
+
+    .btn-container {
+      /* background-color: rgb(53, 64, 64); */
+    }
+
+    .btn-style {
+      background-color: #e8e6e6;
+      min-width: 90px;
+      padding: 1.4rem;
+      border-radius: 16px;
+      margin: 1rem;
+      font-size: 1.4rem;
+    }
+    .special {
+      background-color: rgb(115, 225, 48);
+      color: rgb(29, 29, 30);
+    }
+    #display {
+      height: 60px;
+      background-color: #222;
+      border: none;
+      outline: none;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.4rem;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .btn-style:hover {
+      background-color: #747373;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .special:hover {
+      background-color: rgb(80, 158, 3);
+    }
+    .equal:hover {
+      background-color: #a46706;
+    }
+    .equal {
+      background-color: rgb(218, 178, 20);
+      color: rgb(29, 29, 30);
+    }
+    .AC {
+      background-color: rgba(246, 82, 82, 0.824);
+    }
+    .AC:hover {
+      background-color: rgba(243, 75, 75, 0.729);
+    }
+  </style>
   <body>
+    <header class="head">
+      <h1>Digital Calculator</h1>
+      <h3>
+        <i class="ri-calculator-line"></i>
+        calculate anything
+      </h3>
+    </header>
+    <div class="calculator">
+      <input type="text" id="display" placeholder="0" />
+      <div class="btn-container">
+        <button class="btn-style AC">AC</button>
+        <button class="btn-style special">
+          <i class="ri-arrow-left-long-fill"></i>
+        </button>
+        <button class="btn-style special">%</button>
+        <button class="btn-style special">
+          <i class="ri-divide-line"></i>
+        </button>
+        <br />
+        <button class="btn-style">7</button>
+        <button class="btn-style">8</button>
+        <button class="btn-style">9</button>
+        <button class="btn-style special">X</button>
+        <br />
+        <button class="btn-style">4</button>
+        <button class="btn-style">5</button>
+        <button class="btn-style">6</button>
+        <button class="btn-style special">-</button>
+        <br />
+        <button class="btn-style">1</button>
+        <button class="btn-style">2</button>
+        <button class="btn-style">3</button>
+        <button class="btn-style special">+</button>
+        <br />
+        <button class="btn-style">0</button>
+        <button class="btn-style">00</button>
+        <button class="btn-style">.</button>
+        <button class="btn-style special equal">=</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
