@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        background: #0f1115;
+        color: #f5f5f5;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: min(850px, 90%);
+        margin: auto;
+        padding: 120px 0;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 8vw, 5rem);
+        font-weight: 700;
+        letter-spacing: -3px;
+        margin-bottom: 18px;
+      }
+
+      .subtitle {
+        max-width: 540px;
+        color: #8b8f98;
+        line-height: 1.7;
+        margin-bottom: 90px;
+      }
+
+      .label {
+        color: #666;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 24px;
+      }
+
+      .projects {
+        border-top: 1px solid #23262d;
+      }
+
+      .project {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 0;
+        border-bottom: 1px solid #23262d;
+        text-decoration: none;
+        color: inherit;
+        transition: 0.25s;
+      }
+
+      .project:hover {
+        padding-left: 14px;
+      }
+
+      .left {
+        display: flex;
+        gap: 24px;
+      }
+
+      .number {
+        color: #555;
+        width: 35px;
+      }
+
+      .name {
+        font-size: 1.15rem;
+        font-weight: 500;
+      }
+
+      .desc {
+        color: #80858f;
+        font-size: 0.95rem;
+        margin-top: 6px;
+      }
+
+      .arrow {
+        color: #666;
+        transition: 0.25s;
+      }
+
+      .project:hover .arrow {
+        transform: translateX(6px);
+        color: #fff;
+      }
+
+      footer {
+        margin-top: 90px;
+        display: flex;
+        gap: 30px;
+      }
+
+      footer a {
+        color: #777;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+
+      @media (max-width: 650px) {
+        .project {
+          align-items: flex-start;
+        }
+
+        .arrow {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>JavaScript<br />Projects.</h1>
+
+      <p class="subtitle">
+        Building projects from scratch while learning JavaScript. Every project
+        explores a new concept and pushes a little further than the last.
+      </p>
+
+      <div class="label">Projects</div>
+
+      <div class="projects">
+        <a class="project" href="./Project-1, Digital Calculator/index.html">
+          <div class="left">
+            <div class="number">01</div>
+
+            <div>
+              <div class="name">Digital Calculator</div>
+              <div class="desc">
+                Vanilla JavaScript • Responsive • DOM Manipulation
+              </div>
+            </div>
+          </div>
+
+          <div class="arrow">↗</div>
+        </a>
+
+        <div class="project">
+          <div class="left">
+            <div class="number">02</div>
+
+            <div>
+              <div class="name">Coming Soon</div>
+              <div class="desc">Next project in progress.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="left">
+            <div class="number">03</div>
+
+            <div>
+              <div class="name">Coming Soon</div>
+              <div class="desc">More projects on the way.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <a href="https://github.com/akshatgoswami-dev">GitHub</a>
+        <a
+          href="https://www.linkedin.com/in/akshat-goswami-5113593b6/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B7B9nheoDT4y1Ng%2Bklk0uvw%3D%3D"
+          >LinkedIn</a
+        >
+      </footer>
+    </div>
+  </body>
+</html>
