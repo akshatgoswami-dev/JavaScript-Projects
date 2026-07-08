@@ -16,33 +16,56 @@
     />
   </head>
   <style>
+    @media (max-width: 550px) {
+      .head {
+        margin: 2rem 1rem;
+      }
+
+      .btn-style {
+        min-width: 40px;
+        margin: 0.4rem !important;
+      }
+
+      #display {
+        font-size: 1.2rem;
+      }
+
+      .calculator {
+        width: 95%;
+        padding: 0;
+      }
+      .btn-container {
+        width: 100%;
+        margin: 8rem 0;
+      }
+    }
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      overflow: hidden;
     }
 
     html,
     body {
       height: 100%;
-      min-width: 100%;
+      width: 100%;
       font-family: "Bitcount Single";
       background-color: #020202;
       color: #e8e6e6;
+      overflow: hidden;
     }
 
     .head {
       margin: 3rem 2rem;
     }
     .head h1 {
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 400;
       letter-spacing: -1px;
     }
 
     .head h3 {
-      font-size: 1.4rem;
+      font-size: clamp(1rem, 2vw, 1.4rem);
       padding: 0 2rem;
       font-weight: 300;
     }
@@ -50,7 +73,8 @@
       font-weight: 100;
     }
     .calculator {
-      margin: 2rem 0;
+      width: min(95vw, 520px);
+      margin: 2rem auto;
       padding: 1rem 0;
       display: flex;
       flex-direction: column;
@@ -65,9 +89,7 @@
       background-color: rgb(74, 74, 76);
       height: 4.4rem;
       border: 1px solid #000000;
-      transition:
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     /* Target all input elements when focused */
@@ -81,15 +103,19 @@
 
     .btn-container {
       /* background-color: rgb(53, 64, 64); */
+      width: 100%;
+      min-width: 0;
+      text-align: center;
     }
 
     .btn-style {
       background-color: #e8e6e6;
-      min-width: 90px;
+      width: clamp(58px, 18vw, 90px);
       padding: 1.4rem;
       border-radius: 16px;
       margin: 1rem;
-      font-size: 1.4rem;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      transition: all 0.2s ease;
     }
     .special {
       background-color: rgb(115, 225, 48);
@@ -97,15 +123,14 @@
     }
     #display {
       height: 60px;
+      width: 100%;
       background-color: #222;
-      border: none;
+      border: 1px solid transparent;
       outline: none;
       color: #fff;
-      text-align: center;
       padding: 15px;
       font-size: 1.4rem;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      border-radius: 8px;
     }
 
     .btn-style:hover {
@@ -141,35 +166,55 @@
     </header>
     <div class="calculator">
       <input type="text" id="display" placeholder="0" />
-      <div class="btn-container">
-        <button class="btn-style AC">AC</button>
-        <button class="btn-style special">
+      <div class="btn-container" id="btnGrid">
+        <button class="btn-style AC" value="">AC</button>
+
+        <button class="btn-style special" id="backspace" value="backspace">
           <i class="ri-arrow-left-long-fill"></i>
         </button>
+
         <button class="btn-style special">%</button>
-        <button class="btn-style special">
+
+        <button class="btn-style special" value="/">
           <i class="ri-divide-line"></i>
         </button>
+
         <br />
-        <button class="btn-style">7</button>
-        <button class="btn-style">8</button>
-        <button class="btn-style">9</button>
-        <button class="btn-style special">X</button>
+        <button class="btn-style" value="7">7</button>
+
+        <button class="btn-style" value="8">8</button>
+
+        <button class="btn-style" value="9">9</button>
+
+        <button class="btn-style special" value="*">X</button>
+
         <br />
-        <button class="btn-style">4</button>
-        <button class="btn-style">5</button>
-        <button class="btn-style">6</button>
-        <button class="btn-style special">-</button>
+        <button class="btn-style" value="4">4</button>
+
+        <button class="btn-style" value="5">5</button>
+
+        <button class="btn-style" value="6">6</button>
+
+        <button class="btn-style special" value="-">-</button>
+
         <br />
-        <button class="btn-style">1</button>
-        <button class="btn-style">2</button>
-        <button class="btn-style">3</button>
-        <button class="btn-style special">+</button>
+        <button class="btn-style" value="1">1</button>
+
+        <button class="btn-style" value="2">2</button>
+
+        <button class="btn-style" value="3">3</button>
+
+        <button class="btn-style special" value="+">+</button>
+
         <br />
-        <button class="btn-style">0</button>
-        <button class="btn-style">00</button>
-        <button class="btn-style">.</button>
-        <button class="btn-style special equal">=</button>
+
+        <button class="btn-style" value="0">0</button>
+
+        <button class="btn-style" value="00">00</button>
+
+        <button class="btn-style" value=".">.</button>
+
+        <button class="btn-style special equal" value="=">=</button>
       </div>
     </div>
 
