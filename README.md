@@ -1,2 +1,3 @@
 # JavaScript-Projects
-building 10 JavaScript projects from scratch
+building 10 JavaScript projects from scratch!
+🗿
