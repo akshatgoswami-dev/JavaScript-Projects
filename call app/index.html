@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card UI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Call Organizer</h1>
+      <p>Store and manage your contacts</p>
+    </header>
+    <main id="container">
+      <aside class="side-buttons">
+        <button id="addBtn">+</button>
+        <button id="up-btn">↑</button>
+        <button id="down-btn">↓</button>
+      </aside>
+      <section class="card-container"></section>
+      <aside class="colors">
+        <h3 class="category-filter">Filters</h3>
+
+        <div class="filter-buttons">
+          <button id="black">
+            <span class="dot"></span>
+            Emergency
+          </button>
+
+          <button id="purple">
+            <span class="dot"></span>
+            Urgent
+          </button>
+
+          <button id="brown">
+            <span class="dot"></span>
+            Important
+          </button>
+
+          <button id="teal">
+            <span class="dot"></span>
+            No Rush
+          </button>
+        </div>
+      </aside>
+    </main>
+
+    <div id="modal" class="model-hide">
+      <div class="modal-card">
+        <h2>New Call</h2>
+
+        <form id="note-form">
+          <div class="form-group">
+            <label>Image URL</label>
+            <input
+              type="url"
+              id="image-url"
+              name="imageUrl"
+              placeholder="https://example.com/photo.jpg"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="fullName"
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Home Town</label>
+            <input
+              id="home-town"
+              type="text"
+              name="homeTown"
+              placeholder="Enter home town"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Purpose</label>
+            <input
+              type="text"
+              id="purpose"
+              name="purpose"
+              placeholder="e.g. Quick appointment note"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+
+            <div id="chips">
+              <label class="category emergency">
+                <input
+                  id="emergency"
+                  type="radio"
+                  class="category-input"
+                  name="category"
+                  value="Emergency"
+                />
+                <span>Emergency</span>
+              </label>
+
+              <label class="category important">
+                <input
+                  type="radio"
+                  id="important"
+                  class="category-input"
+                  name="category"
+                  value="Important"
+                />
+                <span>Important</span>
+              </label>
+
+              <label class="category urgent">
+                <input
+                  type="radio"
+                  id="urgent"
+                  class="category-input"
+                  name="category"
+                  value="Urgent"
+                />
+                <span>Urgent</span>
+              </label>
+
+              <label class="category norush">
+                <input
+                  type="radio"
+                  id="no-rush"
+                  class="category-input"
+                  name="category"
+                  value="No Rush"
+                />
+                <span>No Rush</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="create">Create Note</button>
+
+          <button type="button" class="close">Close</button>
+        </form>
+      </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

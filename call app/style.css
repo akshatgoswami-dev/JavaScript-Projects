@@ -1,0 +1,719 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+
+
+
+body {
+  min-height: 100vh;
+  background: #202020;
+  color: white;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: hidden;
+
+}
+
+.header {
+  width: 100%;
+  padding: 2rem;
+  width: auto;
+}
+
+.header h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.header p {
+  color: #8e8e8e;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 1rem 0;
+
+
+}
+
+/* Left buttons */
+
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 12px;
+  position: sticky;
+  top: 120px;
+}
+
+.side-buttons button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+
+  backdrop-filter: blur(20px);
+
+  transition: 0.25s;
+}
+
+.side-buttons button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* .side-buttons,
+.colors {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+
+/* Card */
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 24px;
+  margin: 1.2rem 0;
+  border-radius: 22px;
+  background: #282828;
+  border: 1px solid rgba(255, 255, 255, .08);
+  transition: .25s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #4d8cff;
+}
+
+.card-container {
+  max-width: 600px;
+  height: 75vh;
+  overflow-y: auto;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  scrollbar-width: none;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.img-name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: .6rem 0;
+}
+
+.avatar {}
+
+.username {
+  min-width: 0;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 110px;
+  height: 110px;
+
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+
+}
+
+.card h2 {
+  color: rgb(251, 251, 251);
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  row-gap: 14px;
+
+  margin-bottom: 24px;
+}
+
+.info span {
+  color: #9d9d9d;
+  font-size: 0.7rem;
+}
+
+.info p {
+  margin-top: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions button {
+  border: none;
+  color: white;
+  background: none;
+  padding: 0.6rem;
+  border-radius: 12px;
+}
+
+.actions button:hover {
+
+  background: #4d8cff;
+}
+
+#addBtn {
+
+  background: #4d8cff;
+
+  font-size: 24px;
+
+  border: none;
+
+  box-shadow: 0 8px 20px rgba(77, 140, 255, .35);
+}
+
+#addBtn:hover {
+
+  background: #6da8ff;
+
+  transform: scale(1.08);
+}
+
+/* Right colors */
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+
+}
+
+.colors h3 {
+  color: #9d9d9d;
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.colors button {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 18px;
+
+  border: none;
+  margin: 0 12px;
+
+  border-radius: 14px;
+
+  background: #2b2b2b;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+  font-size: .95rem;
+}
+
+.colors button:hover {
+  background: #3a3a3a;
+
+  transform: translateX(6px);
+}
+
+.dot {
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#black .dot {
+  background: #d84b4b;
+}
+
+#purple .dot {
+  background: #7d55ff;
+}
+
+#brown .dot {
+  background: #d48b26;
+}
+
+#teal .dot {
+  background: #21c5c3;
+}
+
+/* -------------------------- */
+/* NEW CALL MODAL             */
+/* -------------------------- */
+#modal.model-hide {
+  display: none;
+}
+
+#modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.modal-card {
+  width: 460px;
+  padding: 28px;
+  border-radius: 24px;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.modal-card h2 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #222;
+
+  color: white;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+.form-group input:focus {
+  border-color: #4d8cff;
+
+  box-shadow: 0 0 0 4px rgba(77, 140, 255, 0.15);
+}
+
+#chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 150px;
+  padding: 16px 0;
+  border: 1px solid;
+  border-radius: 999px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.category input {
+  accent-color: white;
+}
+
+.emergency {
+  border-color: #d84b4b;
+  color: #d84b4b;
+}
+
+.important {
+  border-color: #d48b26;
+  color: #d48b26;
+}
+
+.urgent {
+  border-color: #7d55ff;
+  color: #7d55ff;
+}
+
+.norush {
+  border-color: #7a7a7a;
+  color: #bdbdbd;
+}
+
+input[type="radio" i] {
+  background: none;
+  block-size: 20px;
+}
+
+.create,
+.close {
+  width: 100%;
+  height: 50px;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 12px;
+}
+
+.create {
+  background: #181111;
+  color: white;
+  border: none;
+}
+
+.create:hover {
+  background: #1d1d1d;
+}
+
+.close {
+  margin-top: 12px;
+  background: #d64040;
+  color: white;
+}
+
+.close:hover {
+  background: #b42727;
+}
+
+.toast {
+  position: fixed;
+  z-index: 10000;
+  top: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #a86609;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateX(120%);
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.default-ux {
+  color: white;
+}
+
+.category-filter {
+  padding: 8px;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+}
+
+
+
+
+/* ========================================================== */
+/* RESPONSIVE                                                 */
+/*                                                            */
+/* Breakpoints (ordered small -> large, never overlapping):   */
+/*   <= 450px      phones   - filters become a fixed top bar  */
+/*   <= 769.98px   tablets  - compact cards, stacked info     */
+/*   >= 770px      desktop  - three column layout             */
+/* ========================================================== */
+
+
+/* ---------- Tablet and below (<= 769.98px) ---------- */
+
+@media (max-width: 769.98px) {
+
+  body {
+    height: 100%;
+  }
+
+  #container {
+    gap: 0.6rem;
+  }
+
+  .side-buttons button {
+    padding: 6px;
+  }
+
+  /* Filters */
+
+  .colors h3 {
+    font-size: 0.9rem;
+  }
+
+  .colors button {
+    padding: 6px 8px;
+    font-size: 0.65rem;
+  }
+
+  /* Cards */
+
+  .card-container {
+    max-width: 400px;
+  }
+
+  .card {
+    padding: 12px;
+    max-block-size: 280px;
+    margin: 1rem 0;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .avatar img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .info {
+    display: block;
+  }
+
+  .townTitle {
+    font-size: 12px;
+  }
+
+  .hometown {
+    margin: 0.5rem 0.2rem;
+    font-size: 10px;
+    text-transform: capitalize;
+    word-break: break-word;
+  }
+
+  .categoryTitle {
+    font-size: 10px;
+  }
+
+  .CardCategory {
+    margin: 0.5rem 0.2rem;
+    font-size: 10px;
+  }
+
+  .actions {
+    gap: 0.31rem;
+  }
+
+  .actions button {
+    font-size: 12px;
+    padding: 0.3rem;
+  }
+
+  /* Modal */
+
+  .modal-card {
+    max-width: 320px;
+  }
+
+  .category {
+    padding: 6px 0;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 12px !important;
+  }
+}
+
+
+/* ---------- Phones (<= 450px) ---------- */
+/* Filters leave the row and become a fixed bar under the header */
+
+@media (max-width: 450px) {
+
+  .colors {
+    position: fixed;
+    top: 7rem;
+    left: 0;
+
+    width: 100%;
+    padding: 10px;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    background: #202020;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+    margin: 0.6rem 0;
+  }
+
+  .colors h3 {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .filter-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .filter-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .colors button {
+    flex-shrink: 0;
+  }
+
+  .card-container {
+    min-width: 230px;
+    height: 60vh;
+    margin: 80px 0;
+  }
+
+  .side-buttons {}
+
+  .side-buttons button {
+    font-size: 15px;
+    padding: 2px 4px;
+    max-width: 30px;
+    max-height: 30px;
+  }
+
+  #addBtn {
+    font-size: 15px;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+
+  /* modal */
+
+  #modal {
+    align-items: center;
+  }
+
+  .modal-card {
+    max-height: 600px;
+    padding: 16px;
+  }
+
+  .modal-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input {
+    height: 38px;
+  }
+
+  .form-group {
+    gap: 4px;
+  }
+
+  #chips .category {
+    padding: 0;
+  }
+
+  #chips {
+    gap: 0.5rem;
+  }
+
+  .create,
+  .close {
+    margin: 8px 0 0 0;
+    height: 42px;
+  }
+}
+
+
+/* ---------- Desktop (>= 770px) ---------- */
+
+@media (min-width: 770px) {
+
+  .card {
+    min-width: 400px;
+  }
+}
