@@ -38,6 +38,7 @@ While building this project, I practiced:
 - UI polishing and debugging
 - Component-based thinking in Vanilla JavaScript
 
+
 ## 📌 Notes
 
 The core project idea came from a JavaScript course, but the interface, responsive layout, visual styling, interaction details, and several features were redesigned and implemented independently as part of my learning process.
