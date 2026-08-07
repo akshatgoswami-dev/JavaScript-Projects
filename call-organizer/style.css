@@ -176,6 +176,18 @@ body {
   font-weight: 500;
 }
 
+.hometown {
+  max-height: 100px;
+  max-width: 280px;
+  /* white-space: nowrap; */
+  overflow:  scroll;
+  /* overflow-wrap: break-word; */
+  text-overflow: ellipsis;
+}
+
+.hometown::-webkit-scrollbar {
+  display: none;
+}
 .actions {
   display: flex;
   justify-content: space-around;
